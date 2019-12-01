@@ -1,6 +1,6 @@
 # njit8021xclient_for_Openwrt
 ## 描述： 
-        *** 这是liuqun大佬写的Makefile，用来在Openwrt中编译njit8021xclient ***
+        这是liuqun大佬写的Makefile，用来在Openwrt中编译njit8021xclient
 ## 用法：
         - 编写Openwrt源码的feeds.conf
                 1. cp feeds.conf.default feeds.conf
