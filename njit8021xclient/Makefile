@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=njit8021xclient
 PKG_RELEASE:=testing
 PKG_VERSION:=1.3
-PKG_SOURCE_URL:=@SF/$(PKG_NAME)
+PKG_SOURCE_URL:=https://github.com/TUT123456/njit8021xclient/releases/download/v$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_MD5SUM:=c6cdf8684ada6bf711cdf1869d8caf74
 
@@ -20,7 +20,7 @@ define Package/njit8021xclient
   SECTION:=net
   CATEGORY:=Network
   TITLE:=NJIT 802.1X client program
-  URL:=http://liuqun.github.com/njit8021xclient
+  URL:=https://github.com/TUT123456/njit8021xclient
   DEPENDS:=+libpcap
   PKG_BUILD_DEPENDS:=+libopenssl
 endef
@@ -28,7 +28,7 @@ endef
 define Package/njit8021xclient/Default/description
  802.1X client from Nanjing Institude of Technology,
  compatable with H3C iNode 802.1X client.
- Support H3C/iNode's private authentication protocol V2.40-V3.60
+ Support H3C/iNode's private authentication protocol V7.30-0515
 endef
 
 CONFIGURE_ARGS += \
