@@ -12,6 +12,7 @@ PKG_RELEASE:=testing
 PKG_VERSION:=1.3
 PKG_SOURCE_URL:=https://github.com/TUT123456/njit8021xclient/releases/download/v$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_MD5SUM:=a30933bfc7c6f1a1aefbd52c7a639848
 PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
