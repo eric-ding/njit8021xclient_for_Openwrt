@@ -12,7 +12,7 @@ PKG_RELEASE:=testing
 PKG_VERSION:=1.3
 PKG_SOURCE_URL:=https://github.com/TUT123456/njit8021xclient/releases/download/v$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_MD5SUM:=c6cdf8684ada6bf711cdf1869d8caf74
+PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -21,8 +21,7 @@ define Package/njit8021xclient
   CATEGORY:=Network
   TITLE:=NJIT 802.1X client program
   URL:=https://github.com/TUT123456/njit8021xclient
-  DEPENDS:=+libpcap
-  PKG_BUILD_DEPENDS:=+libopenssl
+  DEPENDS:=+libpcap +libopenssl
 endef
 
 define Package/njit8021xclient/Default/description
@@ -51,36 +50,9 @@ define Package/njit8021xclient/conffiles
 /etc/config/njit8021xclient.conf
 endef
 
-define Package/njit8021xclient-web
-  SECTION:=net
-  CATEGORY:=Network
-  TITLE:=LuCI pages for NJIT 802.1X client
-  URL:=http://sourceforge.net/projects/njit8021xclient/
-  DEPENDS:=njit8021xclient
-  PKGARCH:=all
-endef
-
-define Package/njit8021xclient-web/description
-  $(call Package/njit8021xclient/Default/description)
-  This package contains LuCI web pages of njit8021xclient.
-  It will help you to set your 802.1X login password.
-endef
-
-define Package/njit8021xclient-web/install
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/src-gui/luci/luci_controller_njit.lua \
-		$(1)/usr/lib/lua/luci/controller/njit.lua
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/src-gui/luci/njit.lua \
-		$(1)/usr/lib/lua/luci/model/cbi/njit.lua
-endef
-
-
 define Package/njit8021xclient/description
   $(call Package/njit8021xclient/Default/description)
   This package contains only the main program njit-client.
 endef
 
 $(eval $(call BuildPackage,njit8021xclient))
-$(eval $(call BuildPackage,njit8021xclient-web))
