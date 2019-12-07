@@ -5,7 +5,7 @@
         - 编写Openwrt源码的feeds.conf
                 1. cp feeds.conf.default feeds.conf
                 2. vi feeds.conf
-                3. 最后一行加上：src-git njit8021xclient https://github.com/TUT123456/njit8021xclient_for_Openwrt.git
+                3. 最后一行加上：src-git njit8021xclient https://github.com/eric-ding/njit8021xclient_for_Openwrt.git
         - 更新下载拓展包
                 ./scripts/feeds update -a
                 ./scripts/feeds install -a
