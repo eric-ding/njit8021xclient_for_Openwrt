@@ -37,6 +37,7 @@ CONFIGURE_ARGS += \
 
 define Build/Prepare
 $(call Build/Prepare/Default)
+$(SED) 's/system/\/\/system/g' $(PKG_BUILD_DIR)/src/auth.c
 endef
 
 define Build/Configure
