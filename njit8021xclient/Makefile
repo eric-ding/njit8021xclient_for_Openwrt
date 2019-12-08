@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=njit8021xclient
 PKG_RELEASE:=testing
-PKG_VERSION:=1.3
+PKG_VERSION:=1.4
 PKG_SOURCE_URL:=https://github.com/eric-ding/njit8021xclient/releases/download/v$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_MD5SUM:=83b183b699efac3cbaf66b481008c69e
